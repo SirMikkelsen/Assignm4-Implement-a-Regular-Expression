@@ -1,13 +1,9 @@
 package com.company;
 
-import com.company.algorithm.Bag;
-import com.company.algorithm.Digraph;
-import com.company.algorithm.DirectedDFS;
 import com.company.algorithm.NFA;
 
-import java.util.Scanner;
 
-import static sun.java2d.cmm.ColorTransform.In;
+import java.util.Scanner;
 
 
 public class Main {
@@ -21,5 +17,9 @@ public class Main {
         System.out.println("Enter regex: ");
         String regex = scanner.next();
 
+        NFA nfa = new NFA(regex);
+          if (nfa.recognizes(text)) {
+              System.out.println(text);
+          }
     }
 }
